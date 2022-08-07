@@ -16,4 +16,5 @@ const UserSchema = new mongoose.Schema({
 }, { timestamps: true })
 
 UserSchema.plugin(uniqueValidator)
-mongoose.model('User', UserSchema)
+const User = mongoose.model('User', UserSchema)
+module.exports = User
