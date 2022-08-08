@@ -5,6 +5,7 @@ const http = require('http')
 const { Server } = require('socket.io')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
+const cookieParser = require('cookie-parser')
 // const path = require('path')
 require('dotenv').config()
 
@@ -23,6 +24,7 @@ module.exports = () => {
   const app = express()
   app.use(cors())
   app.use(bodyParser.json())
+  app.use(cookieParser())
   app.use('/api/auth', authRouts)
 
   // Connecting to the database
